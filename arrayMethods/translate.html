@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate border-left-width to borderLeftWidth</title>
+</head>
+<body>
+<script>
+    function camelize(str) {
+        let lowStr = str.toLowerCase()
+        let arr = lowStr.split("-")
+
+        let newArr = [arr[0]]
+        for(let i = 1;i < arr.length; i++) {
+            let word = arr[i]
+            let subStr = word[0].toUpperCase() + word.slice(1)
+            newArr.push(subStr)
+        }
+
+        let camelStr = newArr.join("")
+        console.log(camelStr)
+    }
+
+    camelize("background-color") == 'backgroundColor';
+    camelize("list-style-image") == 'listStyleImage';
+    camelize("-webkit-transition") == 'WebkitTransition';
+</script>
+</body>
+</html>
